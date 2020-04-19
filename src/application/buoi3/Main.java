@@ -1,5 +1,7 @@
 package application.buoi3;
 
+import application.buoi4.A;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,9 +12,8 @@ public class Main {
         String[] tmp = name.toLowerCase().trim().split("\\s++");
         String result = "";
         for(int i=0; i<tmp.length; i++){
-            int length = tmp[i].length();
             result = result.concat(tmp[i].substring(0,1).toUpperCase())
-                    .concat(tmp[i].substring(1,length));
+                    .concat(tmp[i].substring(1));
             if(i!=tmp.length-1){
                 result = result.concat(" ");
             }

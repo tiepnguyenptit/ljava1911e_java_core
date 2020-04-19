@@ -17,6 +17,11 @@ public class Student {
         this.className = className;
     }
 
+    public Student(String studentCode, String name) {
+        this.studentCode = studentCode;
+        this.name = name;
+    }
+
     public String getStudentCode() {
         return studentCode;
     }
@@ -42,6 +47,15 @@ public class Student {
     }
 
     @Override
+    public String toString() {
+        return "Student{" +
+                "studentCode='" + studentCode + '\'' +
+                ", name='" + name + '\'' +
+                ", className='" + className + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -56,12 +70,5 @@ public class Student {
         return Objects.hash(studentCode, name, className);
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "studentCode='" + studentCode + '\'' +
-                ", name='" + name + '\'' +
-                ", className='" + className + '\'' +
-                '}';
-    }
+
 }
