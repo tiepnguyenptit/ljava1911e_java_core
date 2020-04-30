@@ -34,16 +34,17 @@ public class Main {
 //            System.out.println(student);
 //        });
         int s = 4;
-        int[] arr = {1, 2, 2,100};
+        int[] arr = {1, 2, 2, 100};
         boolean flag = false;
         Map<Integer, Integer> map = new HashMap<>();
 
         for(int i=0; i<arr.length; i++){
-            if(arr[i] <= s && map.get(s-arr[i]) !=0) {
+            if(arr[i] <= s && map.containsKey(s-arr[i])) {
                 flag = true;
                 break;
             }
-            map.put(arr[i], map.get(arr[i]) + 1);
+            int value = map.containsKey(arr[i]) ? map.get(arr[i]) +1 : 1;
+            map.put(arr[i], value);
         }
         if(flag == true) {
             System.out.println("YES");
